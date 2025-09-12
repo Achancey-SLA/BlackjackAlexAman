@@ -17,6 +17,8 @@ public class Player {
         }
        void stay(){
             System.out.println(name+"is Stay");
+           System.out.println(name+"'s final score is "+score);
+
 
        }
         void doubleBet(){
