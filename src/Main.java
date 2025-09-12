@@ -7,8 +7,12 @@ public class Main {
 
         Player player1 = new Player();
         Player player2 = new Player();
-        dealer.askNames(player1,player2);
         dealer.greeting();
+        dealer.askNames(player1,player2);
         dealer.deal(player1);
+        dealer.deal(player2);
+        dealer.askHitOrStay(player1);
+        dealer.askHitOrStay(player2);
+        dealer.dealerPlay();
         }
     }

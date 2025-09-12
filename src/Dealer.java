@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Dealer {
     String name;
+    int score = 0;
     Random r = new Random();
     Scanner textScanner = new Scanner(System.in);
     void greeting(){
@@ -20,6 +21,30 @@ public class Dealer {
         System.out.println(recipient.name+"'s current score is "+ recipient.score);
     }
 
+    void askHitOrStay(Player person){
+        System.out.println(person.name + ", do you want to hit or stay? (current score: " + person.score +")");
+        String response =textScanner.nextLine();
+        if(response.equals("stay")){
+            person.stay();
+        }
+        else if(response.equals("hit")){
+            person.hit();
+            if(person.score>21){
+                System.out.println(person.name + " busted. Oh no!");
+                person.score = 0;
+            }
+            else {
+                askHitOrStay(person);
+            }
+        }
+        else{
+            System.out.println("That wasn't one of the options");
+            askHitOrStay(person);
+
+        }
+
+    }
+
     void askNames(Player name1, Player name2){
         System.out.println("what is player 1's name?");
         String response = textScanner.nextLine();
@@ -27,6 +52,40 @@ public class Dealer {
         System.out.println("what is player 2's name?");
         response = textScanner.nextLine();
         name2.name = response;
+
+    }
+
+    void dealerPlay(){
+        int card = r.nextInt(2,11);
+        System.out.println(name+"'s first card is a " +card);
+        score+=card;
+        card = r.nextInt(2,11);
+        System.out.println(name+"'s second card is a " +card);
+        score+=card;
+        System.out.println(name+"'s current score is "+ score);
+        dealerHitOrStay();
+    }
+
+    void dealerHitOrStay(){
+        if(score<17){
+            int card = r.nextInt(2,11);
+            System.out.println(name+" is hitting and got a " +card);
+            score+=card;
+            System.out.println(name+"'s current score is "+ score);
+            if(score>21){
+                System.out.println(name + "busted");
+                score = 0;
+            }
+            else{
+                dealerHitOrStay();
+
+            }
+        }
+        else{
+            System.out.println(name+" is staying, with a final score of" + score);
+
+        }
+
 
     }
 

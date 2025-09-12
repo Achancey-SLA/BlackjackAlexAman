@@ -7,7 +7,7 @@ public class Player {
     int bet;
 
         void hit(){
-            System.out.println(name+"is Hitting");
+            System.out.println(name+" is Hitting");
             int card=r.nextInt(2,11);
             score+=card;
             System.out.println(name+" got a " +card);
@@ -16,7 +16,7 @@ public class Player {
 
         }
        void stay(){
-            System.out.println(name+"is Stay");
+            System.out.println(name+" is Staying");
            System.out.println(name+"'s final score is "+score);
 
 
