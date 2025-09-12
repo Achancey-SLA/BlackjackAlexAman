@@ -24,4 +24,8 @@ public class Player {
         void doubleBet(){
 
         }
+
+        void introduce() {
+            System.out.println("Hi Dealer.  I'm " + name);
+        }
 }
