@@ -8,8 +8,10 @@ public class Player {
 
         void hit(){
             System.out.println(name+"is Hitting");
-            score+=r.nextInt(2,11);
-            System.out.println(name+"'s Score is "+score);
+            int card=r.nextInt(2,11);
+            score+=card;
+            System.out.println(name+" got a " +card);
+            System.out.println(name+"'s score is "+score);
 
 
         }
