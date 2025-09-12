@@ -16,6 +16,7 @@ public class Player {
 
         }
        void stay(){
+            System.out.println(name+"is Stay");
 
        }
         void doubleBet(){
