@@ -10,5 +10,8 @@ public class Main {
         dealer.askNames(player1,player2);
         dealer.greeting();
         dealer.deal(player1);
+        dealer.deal(player2);
+        dealer.askHitOrStay(player1);
+        dealer.askHitOrStay(player2);
         }
     }

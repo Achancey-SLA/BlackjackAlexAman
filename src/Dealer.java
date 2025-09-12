@@ -30,5 +30,28 @@ public class Dealer {
 
     }
 
+    void askHitOrStay(Player person){
+        System.out.println(person.name+", do you want to hit or stay? (current score is: "+person.score+")");
+        String response = textScanner.nextLine();
+        if(response.equals("stay")){
+            person.stay();
+        }
+        else if (response.equals("hit")){
+            person.hit();
+
+            if(person.score>21){
+                System.out.println(person.name+" busted.");
+            }
+            else{
+                askHitOrStay(person);
+            }
+        }
+        else{
+            System.out.println("that wasn't one of the options. please pick again.");
+            askHitOrStay(person);
+        }
+
+    }
+
 
 }

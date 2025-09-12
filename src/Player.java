@@ -7,14 +7,17 @@ public class Player {
     int bet;
 
         void hit(){
-            System.out.println(name+"is Hitting");
-            score+=r.nextInt(2,11);
-            System.out.println(name+"'s Score is "+score);
+            System.out.println(name+" is hitting");
+            int card=r.nextInt(2,11);
+            score+=card;
+            System.out.println(name+" got a " +card);
+            System.out.println(name+"'s score is "+score);
 
 
         }
        void stay(){
-
+           System.out.println(name+"is staying");
+           System.out.println(name+"'s final score is "+score);
        }
         void doubleBet(){
 
