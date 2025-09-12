@@ -82,10 +82,26 @@ public class Dealer {
             }
         }
         else{
-            System.out.println(name+" is staying, with a final score of" + score);
+            System.out.println(name+" is staying, with a final score of " + score);
 
         }
 
+
+    }
+
+    void sayWhoWon(Player player1, Player player2){
+        if(score>player2.score && score>player1.score){
+            System.out.print(name + "(the dealer) wins! with a score of " + score);
+        }
+        else if(player1.score>player2.score && player1.score>score){
+            System.out.print(player1.name + " wins! with a score of " + player1.score);
+        }
+        else if(player2.score>player1.score && player2.score>score){
+            System.out.print(player2.name + " wins! with a score of " + player2.score);
+        }
+        else{
+            System.out.println("error, nobody wins for some reason");
+        }
 
     }
 

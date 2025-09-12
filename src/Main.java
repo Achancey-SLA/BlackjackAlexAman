@@ -16,6 +16,7 @@ public class Main {
         dealer.askHitOrStay(player1);
         dealer.askHitOrStay(player2);
         dealer.dealerPlay();
+        dealer.sayWhoWon(player1,player2);
 
 
 
