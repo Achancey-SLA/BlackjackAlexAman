@@ -1,11 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class Dealer {
-    String name;
-    int score = 0;
-    Random r = new Random();
-    Scanner textScanner = new Scanner(System.in);
+public class Dealer extends BlackJackPerson {
+
     void greeting(){
         System.out.println("hello, I am " + name + ", The dealer.");
 
@@ -45,13 +42,10 @@ public class Dealer {
 
     }
 
-    void askNames(Player name1, Player name2){
-        System.out.println("what is player 1's name?");
+    void askNames(Player name1){
+        System.out.println("enter the name of a player");
         String response = textScanner.nextLine();
         name1.name = response;
-        System.out.println("what is player 2's name?");
-        response = textScanner.nextLine();
-        name2.name = response;
 
     }
 

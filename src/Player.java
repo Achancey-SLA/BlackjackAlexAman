@@ -1,8 +1,6 @@
 import java.util.Random;
-public class Player {
-    int score;
-    String name;
-    Random r = new Random();
+public class Player extends BlackJackPerson {
+
 
     int bet;
 
