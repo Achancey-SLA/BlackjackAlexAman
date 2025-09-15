@@ -73,7 +73,7 @@ public class Dealer {
             score+=card;
             System.out.println(name+"'s current score is "+ score);
             if(score>21){
-                System.out.println(name + "busted");
+                System.out.println(name + " busted");
                 score = 0;
             }
             else{
@@ -90,17 +90,17 @@ public class Dealer {
     }
 
     void sayWhoWon(Player player1, Player player2){
-        if(score>=player2.score && score>=player1.score){
+        if(score>player2.score && score>player1.score){
             System.out.print(name + "(the dealer) wins! with a score of " + score);
         }
-        else if(player1.score>=player2.score && player1.score>=score){
+        else if(player1.score>player2.score && player1.score>score){
             System.out.print(player1.name + " wins! with a score of " + player1.score);
         }
-        else if(player2.score>=player1.score && player2.score>=score){
+        else if(player2.score>player1.score && player2.score>score){
             System.out.print(player2.name + " wins! with a score of " + player2.score);
         }
-        else{
-            System.out.println("error, nobody wins for some reason");
+        else {
+            System.out.println("It's a tie!");
         }
 
     }
