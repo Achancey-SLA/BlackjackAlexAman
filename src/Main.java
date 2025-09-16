@@ -11,28 +11,34 @@ public class Main {
         people.add(player1);
         people.add(player2);
         people.add(dealer);
-        players.add(player1);
-        players.add(player2);
 
         dealer.name = "Luke";
         dealer.greeting();
-        for(Player eachplayer : players){
-        dealer.askNames(eachplayer);
-        }
-        for(Player eachPlayer: players){
-            eachPlayer.introduce();
-        }
-        for(Player eachPlayer: players){
-            dealer.deal(eachPlayer);
-        }
-        for(Player eachPlayer: players){
-            dealer.askHitOrStay(eachPlayer);
-        }
+
+
+        dealer.askNames(player1);
+        dealer.askNames(player2);
+        player1.introduce();
+        player2.introduce();
+        dealer.deal(player1);
+        dealer.deal(player2);
+        dealer.askHitOrStay(player1);
+        dealer.askHitOrStay(player2);
 
 
         dealer.dealerPlay();
-        dealer.sayWhoWon(player1,player2);
 
+        System.out.println();
+
+        for(BlackJackPerson eachPerson: people){
+            if(eachPerson.score>1) {
+                System.out.println(eachPerson.name + "'s final score is " + eachPerson.score);
+            }
+            else{
+                System.out.println(eachPerson.name + " doesn't have a score because they busted.");
+            }
+        }
+        dealer.sayWhoWon(people);
 
 
 

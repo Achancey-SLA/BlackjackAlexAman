@@ -2,8 +2,6 @@ import java.util.Random;
 public class Player extends BlackJackPerson {
 
 
-    int bet;
-
         void hit(){
             System.out.println(name+" is Hitting");
             int card=r.nextInt(2,11);

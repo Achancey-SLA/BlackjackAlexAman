@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -83,19 +84,17 @@ public class Dealer extends BlackJackPerson {
 
     }
 
-    void sayWhoWon(Player player1, Player player2){
-        if(score>player2.score && score>player1.score){
-            System.out.print(name + "(the dealer) wins! with a score of " + score);
+    void sayWhoWon(ArrayList<BlackJackPerson> people){
+        int highScore = 0;
+        BlackJackPerson currentWinner = people.get(1);
+
+        for(BlackJackPerson eachPerson : people){
+            if(eachPerson.score>highScore) {
+                currentWinner = eachPerson;
+                highScore = eachPerson.score;
+            }
         }
-        else if(player1.score>player2.score && player1.score>score){
-            System.out.print(player1.name + " wins! with a score of " + player1.score);
-        }
-        else if(player2.score>player1.score && player2.score>score){
-            System.out.print(player2.name + " wins! with a score of " + player2.score);
-        }
-        else {
-            System.out.println("It's a tie!");
-        }
+        System.out.println(currentWinner.name + " wins! with a score of "+currentWinner.score);
 
     }
 
