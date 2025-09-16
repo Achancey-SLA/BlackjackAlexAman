@@ -9,6 +9,8 @@ public class Main {
         Player player3 = new Player();
         Player player2 = new Player();
         Player player1 = new Player();
+
+        dealer.createDeck();
         people.add(player1);
         people.add(player2);
         people.add(player3);

@@ -1,9 +1,25 @@
+import javax.smartcardio.Card;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Dealer extends BlackJackPerson {
 
+    void createDeck(){
+        ArrayList<Card> deck = new ArrayList<Card>();
+        for(int i=0; i<4; i++){
+            String suit;
+            if(i==0){
+                suit = "diamonds";
+            }
+            if(i==0){
+                suit = "hearts";
+            }
+            if(i==0){
+                suit = "";
+            }
+        }
+    }
     void greeting(){
         System.out.println("hello, I am " + name + ", The dealer.");
 
