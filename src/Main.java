@@ -3,27 +3,42 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<BlackJackPerson> people = new ArrayList<BlackJackPerson>();
-
+        ArrayList<Player> players = new ArrayList<Player>();
 
         Dealer dealer = new Dealer();
+        Player player3 = new Player();
         Player player2 = new Player();
         Player player1 = new Player();
         people.add(player1);
         people.add(player2);
+        people.add(player3);
         people.add(dealer);
+        players.add(player1);
+        players.add(player2);
+        players.add(player3);
 
         dealer.name = "Luke";
         dealer.greeting();
 
 
-        dealer.askNames(player1);
-        dealer.askNames(player2);
-        player1.introduce();
-        player2.introduce();
-        dealer.deal(player1);
-        dealer.deal(player2);
-        dealer.askHitOrStay(player1);
-        dealer.askHitOrStay(player2);
+
+        for (Player eachPlayer : players) {
+            dealer.askNames(eachPlayer);
+        }
+
+        for (Player eachPlayer : players) {
+            eachPlayer.introduce();
+        }
+
+
+        for (Player eachPlayer : players) {
+            dealer.deal(eachPlayer);
+        }
+
+        for (Player eachPlayer : players) {
+            dealer.askHitOrStay(eachPlayer);
+        }
+
 
 
         dealer.dealerPlay();
