@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
         ArrayList<BlackJackPerson> people = new ArrayList<BlackJackPerson>();
-        ArrayList<Player> players = new ArrayList<Player>();
+
 
         Dealer dealer = new Dealer();
         Player player2 = new Player();
