@@ -3,13 +3,22 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Dealer extends BlackJackPerson {
+    ArrayList<ACard> deck = new ArrayList<ACard>();
     String suit;
     public String toString(){
-        String returnString = "name: " + name;
+        String returnString = "name: ";
+        returnString += name;
         return returnString;
     }
+    public ACard randomCard(){
+        int cardIndex = r.nextInt(1,deck.size());
+        ACard returnCard = deck.get(cardIndex);
+        deck.remove(cardIndex);
+        return returnCard;
+    }
 
-    public void createDeck(){ArrayList<ACard> deck = new ArrayList<ACard>();
+    public void createDeck(){
+
         for(int i=0; i<4; i+=1){
 
             if(i==0){
@@ -44,12 +53,12 @@ public class Dealer extends BlackJackPerson {
     }
 
     void deal(Player recipient){
-        int card = r.nextInt(2,11);
-        System.out.println(recipient.name+"'s first card is a " +card);
-        recipient.score+=card;
-        card = r.nextInt(2,11);
+        ACard card = randomCard();
+        System.out.println(recipient.name+"'s first card is the " +card);
+        recipient.score+=card.value;
+        card = randomCard();
         System.out.println(recipient.name+"'s second card is a " +card);
-        recipient.score+=card;
+        recipient.score+=card.value;
         System.out.println(recipient.name+"'s current score is "+ recipient.score);
     }
 
@@ -60,7 +69,7 @@ public class Dealer extends BlackJackPerson {
             person.stay();
         }
         else if(response.equals("hit")){
-            person.hit();
+            person.hit(randomCard());
             if(person.score>21){
                 System.out.println(person.name + " busted. Oh no!");
                 person.score = 0;

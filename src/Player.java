@@ -2,11 +2,10 @@ import java.util.Random;
 public class Player extends BlackJackPerson {
 
 
-        void hit(){
+        void hit(ACard card){
             System.out.println(name+" is Hitting");
-            int card=r.nextInt(2,11);
-            score+=card;
-            System.out.println(name+" got a " +card);
+            score+=card.value;
+            System.out.println(name+" got the " +card);
             System.out.println(name+"'s score is "+score);
 
 
