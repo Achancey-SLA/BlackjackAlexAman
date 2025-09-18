@@ -10,7 +10,7 @@ public class Main {
         Player player2 = new Player();
         Player player1 = new Player();
 
-        dealer.createDeck();
+
         people.add(player1);
         people.add(player2);
         people.add(player3);
@@ -20,7 +20,9 @@ public class Main {
         players.add(player3);
 
         dealer.name = "Luke";
+        //System.out.println(dealer.toString());
         dealer.greeting();
+        dealer.createDeck();
 
 
 

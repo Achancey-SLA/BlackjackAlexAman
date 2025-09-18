@@ -1,25 +1,43 @@
-import javax.smartcardio.Card;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Dealer extends BlackJackPerson {
+    String suit;
+    public String toString(){
+        String returnString = "name: " + name;
+        return returnString;
+    }
 
-    void createDeck(){
-        ArrayList<Card> deck = new ArrayList<Card>();
-        for(int i=0; i<4; i++){
-            String suit;
+    public void createDeck(){ArrayList<ACard> deck = new ArrayList<ACard>();
+        for(int i=0; i<4; i+=1){
+
             if(i==0){
                 suit = "diamonds";
             }
-            if(i==0){
+            if(i==1){
                 suit = "hearts";
             }
-            if(i==0){
-                suit = "";
+            if(i==2){
+                suit = "clubs";
             }
+            if(i==3){
+                suit = "spades";
+            }
+
+            for (int ii=2; ii<11; ii++){
+                deck.add(new ACard((ii+" of "+suit),ii));
+            }
+            deck.add(new ACard(("jack of "+suit),10));
+            deck.add(new ACard(("queen of "+suit),10));
+            deck.add(new ACard(("king of "+suit),10));
+
         }
+        //for(ACard eachCard : deck){
+        //    System.out.println(eachCard.name+"'s value is "+eachCard.value );
+        //}
     }
+
     void greeting(){
         System.out.println("hello, I am " + name + ", The dealer.");
 
