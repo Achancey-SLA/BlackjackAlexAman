@@ -7,9 +7,12 @@ public class Player extends BlackJackPerson {
             score+=card.value;
             System.out.println(name+" got the " +card);
             System.out.println(name+"'s score is "+score);
-
-
         }
+
+        public String toString(){
+            return name;
+        }
+
        void stay(){
             System.out.println(name+" is Staying");
            System.out.println(name+"'s final score is "+score);

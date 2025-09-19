@@ -94,21 +94,21 @@ public class Dealer extends BlackJackPerson {
     }
 
     void dealerPlay(){
-        int card = r.nextInt(2,11);
+        ACard card = randomCard();
         System.out.println(name+"'s first card is a " +card);
-        score+=card;
-        card = r.nextInt(2,11);
+        score+=card.value;
+        card = randomCard();
         System.out.println(name+"'s second card is a " +card);
-        score+=card;
+        score+=card.value;
         System.out.println(name+"'s current score is "+ score);
         dealerHitOrStay();
     }
 
     void dealerHitOrStay(){
         if(score<17){
-            int card = r.nextInt(2,11);
+            ACard card = randomCard();
             System.out.println(name+" is hitting and got a " +card);
-            score+=card;
+            score+=card.value;
             System.out.println(name+"'s current score is "+ score);
             if(score>21){
                 System.out.println(name + " busted");
