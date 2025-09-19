@@ -1,23 +1,28 @@
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main {
+
+
     public static void main(String[] args) {
+        Scanner inputScanner = new Scanner(System.in);
         ArrayList<BlackJackPerson> people = new ArrayList<BlackJackPerson>();
         ArrayList<Player> players = new ArrayList<Player>();
 
         Dealer dealer = new Dealer();
-        Player player3 = new Player();
-        Player player2 = new Player();
-        Player player1 = new Player();
+        System.out.println("How many players are playing?");
+        String response = inputScanner.nextLine();
+        int playerAmount = Integer.parseInt(response);
+
+        for(int i=0;i<playerAmount;i++){
+            Player basePlayer = new Player();
+            players.add(basePlayer);
+            people.add(basePlayer);
+        }
 
 
-        people.add(player1);
-        people.add(player2);
-        people.add(player3);
         people.add(dealer);
-        players.add(player1);
-        players.add(player2);
-        players.add(player3);
+
 
         dealer.name = "Luke";
         //System.out.println(dealer.toString());
