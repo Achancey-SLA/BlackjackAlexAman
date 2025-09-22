@@ -21,24 +21,24 @@ public class Dealer extends BlackJackPerson {
         for(int i=0; i<4; i+=1){
 
             if(i==0){
-                suit = "diamonds";
+                suit = "♦";
             }
             if(i==1){
-                suit = "hearts";
+                suit = "♥";
             }
             if(i==2){
-                suit = "clubs";
+                suit = "♣";
             }
             if(i==3){
-                suit = "spades";
+                suit = "♠";
             }
 
             for (int ii=2; ii<11; ii++){
                 deck.add(new ACard((ii+" of "+suit),ii));
             }
-            deck.add(new ACard(("jack of "+suit),10));
-            deck.add(new ACard(("queen of "+suit),10));
-            deck.add(new ACard(("king of "+suit),10));
+            deck.add(new ACard(("\uD835\uDCD9\uD835\uDCEA\uD835\uDCEC\uD835\uDCF4 of "+suit),10));
+            deck.add(new ACard(("\uD835\uDD7C\uD835\uDD9A\uD835\uDD8A\uD835\uDD8A\uD835\uDD93 of "+suit),10));
+            deck.add(new ACard(("\uD835\uDCDA\uD835\uDCF2\uD835\uDCF7\uD835\uDCF0 of "+suit),10));
 
         }
     }

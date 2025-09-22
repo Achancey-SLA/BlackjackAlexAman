@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class BlackJackPerson {
+    class BlackJackPerson {
     private String name;
     private int score = 0;
     protected Random r = new Random();
