@@ -1,21 +1,20 @@
-import java.util.Random;
 public class Player extends BlackJackPerson {
 
 
         void hit(ACard card){
-            System.out.println(name+" is Hitting");
-            score+=card.value;
-            System.out.println(name+" got the " +card);
-            System.out.println(name+"'s score is "+score);
+            System.out.println(getName() +" is Hitting");
+            addToScore(card.value);
+            System.out.println(getName() +" got the " +card);
+            System.out.println(getName() +"'s score is "+getScore());
         }
 
         public String toString(){
-            return name;
+            return getName();
         }
 
        void stay(){
-            System.out.println(name+" is Staying");
-           System.out.println(name+"'s final score is "+score);
+            System.out.println(getName() +" is Staying");
+           System.out.println(getName() +"'s final score is "+getScore());
 
 
        }
@@ -24,6 +23,6 @@ public class Player extends BlackJackPerson {
         }
 
         void introduce() {
-            System.out.println("Hi Dealer.  I'm " + name);
+            System.out.println("Hi Dealer.  I'm " + getName());
         }
 }

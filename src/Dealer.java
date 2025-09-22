@@ -1,13 +1,12 @@
 import java.util.ArrayList;
-import java.util.Random;
-import java.util.Scanner;
 
 public class Dealer extends BlackJackPerson {
-    ArrayList<ACard> deck = new ArrayList<ACard>();
-    String suit;
+    private ArrayList<ACard> deck = new ArrayList<ACard>();
+    private String suit;
+
     public String toString(){
         String returnString = "name: ";
-        returnString += name;
+        returnString += getName();
         return returnString;
     }
     public ACard randomCard(){
@@ -42,37 +41,34 @@ public class Dealer extends BlackJackPerson {
             deck.add(new ACard(("king of "+suit),10));
 
         }
-        //for(ACard eachCard : deck){
-        //    System.out.println(eachCard.name+"'s value is "+eachCard.value );
-        //}
     }
 
     void greeting(){
-        System.out.println("hello, I am " + name + ", The dealer.");
+        System.out.println("hello, I am " + getName() + ", The dealer.");
 
     }
 
     void deal(Player recipient){
         ACard card = randomCard();
-        System.out.println(recipient.name+"'s first card is the " +card);
-        recipient.score+=card.value;
+        System.out.println(recipient.getName() +"'s first card is the " +card);
+        recipient.addToScore(card.value);
         card = randomCard();
-        System.out.println(recipient.name+"'s second card is a " +card);
-        recipient.score+=card.value;
-        System.out.println(recipient.name+"'s current score is "+ recipient.score);
+        System.out.println(recipient.getName() +"'s second card is a " +card);
+        recipient.addToScore(card.value);
+        System.out.println(recipient.getName() +"'s current score is "+ recipient.getScore());
     }
 
     void askHitOrStay(Player person){
-        System.out.println(person.name + ", do you want to hit or stay? (current score: " + person.score +")");
+        System.out.println(person.getName() + ", do you want to hit or stay? (current score: " + person.getScore() +")");
         String response =textScanner.nextLine();
         if(response.equals("stay")){
             person.stay();
         }
         else if(response.equals("hit")){
             person.hit(randomCard());
-            if(person.score>21){
-                System.out.println(person.name + " busted. Oh no!");
-                person.score = 0;
+            if(person.getScore()>21){
+                System.out.println(person.getName() + " busted. Oh no!");
+                person.setScore(0);
             }
             else {
                 askHitOrStay(person);
@@ -89,30 +85,30 @@ public class Dealer extends BlackJackPerson {
     void askNames(Player name1){
         System.out.println("enter the name of a player");
         String response = textScanner.nextLine();
-        name1.name = response;
+        name1.setName(response);
 
     }
 
     void dealerPlay(){
         ACard card = randomCard();
-        System.out.println(name+"'s first card is a " +card);
-        score+=card.value;
+        System.out.println(getName() +"'s first card is a " +card);
+        addToScore(card.value);
         card = randomCard();
-        System.out.println(name+"'s second card is a " +card);
-        score+=card.value;
-        System.out.println(name+"'s current score is "+ score);
+        System.out.println(getName() +"'s second card is a " +card);
+        addToScore(card.value);
+        System.out.println(getName() +"'s current score is "+ getScore());
         dealerHitOrStay();
     }
 
     void dealerHitOrStay(){
-        if(score<17){
+        if(getScore()<17){
             ACard card = randomCard();
-            System.out.println(name+" is hitting and got a " +card);
-            score+=card.value;
-            System.out.println(name+"'s current score is "+ score);
-            if(score>21){
-                System.out.println(name + " busted");
-                score = 0;
+            System.out.println(getName() +" is hitting and got a " +card);
+            addToScore(card.value);
+            System.out.println(getName() +"'s current score is "+ getScore());
+            if(getScore()>21){
+                System.out.println(getName() + " busted");
+                setScore(0);
             }
             else{
                 dealerHitOrStay();
@@ -120,7 +116,7 @@ public class Dealer extends BlackJackPerson {
             }
         }
         else{
-            System.out.println(name+" is staying, with a final score of " + score);
+            System.out.println(getName() +" is staying, with a final score of " + getScore());
 
         }
 
@@ -132,12 +128,12 @@ public class Dealer extends BlackJackPerson {
         BlackJackPerson currentWinner = people.get(1);
 
         for(BlackJackPerson eachPerson : people){
-            if(eachPerson.score>highScore) {
+            if(eachPerson.getScore()>highScore) {
                 currentWinner = eachPerson;
-                highScore = eachPerson.score;
+                highScore = eachPerson.getScore();
             }
         }
-        System.out.println(currentWinner.name + " wins! with a score of "+currentWinner.score);
+        System.out.println(currentWinner.getName() + " wins! with a score of "+currentWinner.getScore());
 
     }
 

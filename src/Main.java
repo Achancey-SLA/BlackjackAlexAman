@@ -24,7 +24,7 @@ public class Main {
         people.add(dealer);
 
 
-        dealer.name = "Luke";
+        dealer.setName("Luke");
         //System.out.println(dealer.toString());
         dealer.greeting();
         dealer.createDeck();
@@ -55,11 +55,11 @@ public class Main {
         System.out.println();
 
         for(BlackJackPerson eachPerson: people){
-            if(eachPerson.score>1) {
-                System.out.println(eachPerson.name + "'s final score is " + eachPerson.score);
+            if(eachPerson.getScore()>1) {
+                System.out.println(eachPerson.getName() + "'s final score is " + eachPerson.getScore());
             }
             else{
-                System.out.println(eachPerson.name + " doesn't have a score because they busted.");
+                System.out.println(eachPerson.getName() + " doesn't have a score because they busted.");
             }
         }
         dealer.sayWhoWon(people);
