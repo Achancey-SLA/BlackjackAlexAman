@@ -1,7 +1,10 @@
 public class Player extends BlackJackPerson {
 
+    public Player(String name) {
+        super(name);
+    }
 
-        void hit(ACard card){
+    void hit(ACard card){
             System.out.println(getName() +" is Hitting");
             addToScore(card.value);
             System.out.println(getName() +" got the " +card);

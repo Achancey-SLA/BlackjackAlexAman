@@ -15,13 +15,14 @@ public class Main {
         int playerAmount = Integer.parseInt(response);
 
         for(int i=0;i<playerAmount;i++){
-            Player basePlayer = new Player();
+            Player basePlayer = new Player("no name yet");
             players.add(basePlayer);
             people.add(basePlayer);
         }
 
 
         people.add(dealer);
+
 
         //System.out.println(dealer.toString());
         dealer.greeting();
