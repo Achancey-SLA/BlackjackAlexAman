@@ -4,6 +4,10 @@ public class Dealer extends BlackJackPerson {
     private ArrayList<ACard> deck = new ArrayList<ACard>();
     private String suit;
 
+    public Dealer(String name) {
+        super(name);
+    }
+
     public String toString(){
         String returnString = "name: ";
         returnString += getName();

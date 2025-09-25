@@ -9,7 +9,7 @@ public class Main {
         ArrayList<BlackJackPerson> people = new ArrayList<BlackJackPerson>();
         ArrayList<Player> players = new ArrayList<Player>();
 
-        Dealer dealer = new Dealer();
+        Dealer dealer = new Dealer("Luke");
         System.out.println("How many players are playing?");
         String response = inputScanner.nextLine();
         int playerAmount = Integer.parseInt(response);
@@ -23,8 +23,6 @@ public class Main {
 
         people.add(dealer);
 
-
-        dealer.setName("Luke");
         //System.out.println(dealer.toString());
         dealer.greeting();
         dealer.createDeck();

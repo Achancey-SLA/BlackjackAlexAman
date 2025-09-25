@@ -7,6 +7,10 @@ import java.util.Scanner;
     protected Random r = new Random();
     protected Scanner textScanner = new Scanner(System.in);
 
+    public BlackJackPerson(String name){
+        this.name = name;
+    }
+
     String getName(){
         return name;
     }

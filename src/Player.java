@@ -8,7 +8,7 @@ public class Player extends BlackJackPerson {
             System.out.println(getName() +"'s score is "+getScore());
         }
 
-        public String toString(){
+    public String toString(){
             return getName();
         }
 
